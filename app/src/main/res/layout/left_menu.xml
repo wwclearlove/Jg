@@ -131,7 +131,32 @@
 
 
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/gongjiao"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
 
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@mipmap/ic_launcher_round"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="公交查询"
+                    android:textColor="#000000"
+                    android:textSize="16dp"/>
+
+
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

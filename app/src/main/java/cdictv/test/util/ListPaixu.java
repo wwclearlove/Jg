@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import cdictv.test.bean.GongjiaoBean;
 import cdictv.test.bean.LudengBeen;
 
 public class ListPaixu {
@@ -32,6 +33,15 @@ public class ListPaixu {
             return 0;
             }
         });
+    }
+    public static void gongJiaoPaixu(List<GongjiaoBean.DataBean.BusBean> list){
+            Collections.sort(list, new Comparator<GongjiaoBean.DataBean.BusBean>() {
+                @Override
+                public int compare(GongjiaoBean.DataBean.BusBean o1, GongjiaoBean.DataBean.BusBean o2) {
+
+                    return o1.distance- o2.distance;
+                }
+            });
     }
 //wwwwwwww
 }

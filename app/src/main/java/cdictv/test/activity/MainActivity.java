@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout    myFzzhi;
     private LinearLayout rglManger;
     private LinearLayout dataAnalysis;
+    private LinearLayout gongjiaoche;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,ViewPagerActivity.class));
             }
         });
+        gongjiaoche.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,PaixuActivity.class));
+            }
+        });
     }
 
     private void initView() {
@@ -82,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         myAccount = (LinearLayout) findViewById(R.id.my_account);
         rglManger = (LinearLayout) findViewById(R.id.rgl_manger);
         dataAnalysis = (LinearLayout) findViewById(R.id.dataAnalysis);
+        gongjiaoche= (LinearLayout) findViewById(R.id.gongjiao);
         myFzzhi=findViewById(R.id.my_fz);
 
     }

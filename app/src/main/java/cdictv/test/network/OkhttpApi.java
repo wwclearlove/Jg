@@ -4,8 +4,9 @@ import okhttp3.FormBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-public class LudengApi {
+public class OkhttpApi {
     private static  final String path1="lamplist";
+    private static  final String path2="gongjiao";
 
     public static  void show(String parameters, String headers, MyCall myCall) {
         RequestBody body = new FormBody.Builder()
@@ -16,7 +17,16 @@ public class LudengApi {
                 .url(NetworkApi.BASE_USL +path1)
                 .post(body)
                 .build();
-    NetworkApi.getNetworkApi().request(request,myCall);
+        NetworkApi.getNetworkApi().request(request,myCall);
+    }
+    public static  void gongjiao( MyCall myCall) {
+        RequestBody body = new FormBody.Builder()
+                .build();
+        Request request = new Request.Builder()
+                .url(NetworkApi.BASE_USL +path2)
+                .post(body)
+                .build();
+        NetworkApi.getNetworkApi().request(request,myCall);
     }
     public static  void cheliang( MyCall myCall) {
         RequestBody body = new FormBody.Builder()

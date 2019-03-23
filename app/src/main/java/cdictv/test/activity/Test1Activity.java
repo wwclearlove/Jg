@@ -32,7 +32,7 @@ import cdictv.test.adatpter.MyAdapter;
 import cdictv.test.bean.ClczBeen;
 import cdictv.test.database.ClczDao;
 import cdictv.test.database.CzliDao;
-import cdictv.test.network.LudengApi;
+import cdictv.test.network.OkhttpApi;
 import cdictv.test.network.MyCall;
 import cdictv.test.network.Upadate;
 import cdictv.test.util.DateUtil;
@@ -228,7 +228,7 @@ public class Test1Activity extends AppCompatActivity {
         initdata();
         //没有数据
         if(mClczBeens.size()==0){
-            LudengApi.cheliang(new MyCall() {
+            OkhttpApi.cheliang(new MyCall() {
                 @Override
                 public void success(String json) {
                     List list = JsonObjecj.getList(json);

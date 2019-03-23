@@ -20,7 +20,7 @@ import cdictv.test.R;
 import cdictv.test.adatpter.LudengAdatper;
 import cdictv.test.bean.LudengBeen;
 import cdictv.test.bean.SpinerBean;
-import cdictv.test.network.LudengApi;
+import cdictv.test.network.OkhttpApi;
 import cdictv.test.network.MyCall;
 import cdictv.test.network.NetworkApi;
 import cdictv.test.util.ListPaixu;
@@ -46,7 +46,7 @@ public class LudengActivity extends AppCompatActivity {
         @Override
         public void run() {
             mHandler.post(() -> {
-                LudengApi.show("%5B%5D", "%5B%5D", new MyCall() {
+                OkhttpApi.show("%5B%5D", "%5B%5D", new MyCall() {
                     @Override
                     public void success(String json) {
                         Log.e("json", "success: " + json);
