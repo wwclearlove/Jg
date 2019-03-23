@@ -7,7 +7,7 @@ import java.util.List;
 import cdictv.test.bean.LudengBeen;
 
 public class ListPaixu {
-    public static List<LudengBeen.DataBean> luKouS(int i,List<LudengBeen.DataBean> list){
+    public static void luKouS(int i,List<LudengBeen.DataBean> list){
         Collections.sort(list, new Comparator<LudengBeen.DataBean>() {
             @Override
             public int compare(LudengBeen.DataBean o1, LudengBeen.DataBean o2) {
@@ -32,7 +32,6 @@ public class ListPaixu {
             return 0;
             }
         });
-        return  list;
     }
 //wwwwwwww
 }
