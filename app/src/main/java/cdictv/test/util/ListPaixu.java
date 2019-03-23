@@ -20,13 +20,13 @@ public class ListPaixu {
                         return (o1.red-o2.red);
                     case 4:
                         return -(o1.red-o2.red);
-                    case 5:
-                        return (o1.yellow-o2.yellow);
-                    case 6:
-                        return -(o1.yellow-o2.yellow);
                     case 7:
-                        return (o1.green-o2.green);
+                        return (o1.yellow-o2.yellow);
                     case 8:
+                        return -(o1.yellow-o2.yellow);
+                    case 5:
+                        return (o1.green-o2.green);
+                    case 6:
                         return -(o1.green-o2.green);
                 }
             return 0;

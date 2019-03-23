@@ -11,8 +11,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -24,6 +22,7 @@ import cdictv.test.bean.LudengBeen;
 import cdictv.test.bean.SpinerBean;
 import cdictv.test.network.LudengApi;
 import cdictv.test.network.MyCall;
+import cdictv.test.network.NetworkApi;
 import cdictv.test.util.ListPaixu;
 
 public class LudengActivity extends AppCompatActivity {
@@ -51,7 +50,7 @@ public class LudengActivity extends AppCompatActivity {
                     @Override
                     public void success(String json) {
                         Log.e("json", "success: " + json);
-                        been = new Gson().fromJson(json, LudengBeen.class);
+                        been = NetworkApi.gson.fromJson(json, LudengBeen.class);
                         ListPaixu.luKouS(mSpinerBean.id, been.data);
                         mList.clear();
                         mList.addAll(been.data);
@@ -157,6 +156,5 @@ public class LudengActivity extends AppCompatActivity {
         bottomView = (View) findViewById(R.id.bottom_view);
         listview = (ListView) findViewById(R.id.listview);
         mSpinner = findViewById(R.id.spinenr);
-
     }
 }

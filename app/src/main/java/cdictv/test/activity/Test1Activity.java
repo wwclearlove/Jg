@@ -153,7 +153,6 @@ public class Test1Activity extends AppCompatActivity {
             e.printStackTrace();
         }
         mTextView = findViewById(R.id.cq);
-        mTextView3 = findViewById(R.id.fazhi);
         mTextView2 = findViewById(R.id.jilu);
         mTextView2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,12 +160,7 @@ public class Test1Activity extends AppCompatActivity {
                 startActivity(new Intent(Test1Activity.this, LishiActivity.class));
             }
         });
-        mTextView3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Test1Activity.this, TimerActivity.class));
-            }
-        });
+
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

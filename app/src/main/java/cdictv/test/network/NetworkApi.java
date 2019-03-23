@@ -24,7 +24,7 @@ public class NetworkApi{
     public static final String uri="https://getman.cn/mock/cheliang";
      private static  NetworkApi networkApi;
     private  OkHttpClient okHttpClient;
-    private   Gson gson;
+    public   static Gson gson;
     private Handler mHandler=new Handler() ;
     private void initGson(){
         gson  = new GsonBuilder().registerTypeAdapterFactory(new NullStringToEmptyAdapterFactory()).create();
@@ -43,6 +43,7 @@ public class NetworkApi{
                         .connectTimeout(30,TimeUnit.SECONDS).build();
         initGson();
     }
+
     public static NetworkApi getNetworkApi(){
         if(networkApi == null){
             synchronized (NetworkApi.class){
