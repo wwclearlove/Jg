@@ -57,7 +57,7 @@ public class NetworkApi{
         return networkApi;
     }
 
-   public void request(Request request, final MyCall myCall) {
+   public  void request(Request request, final MyCall myCall) {
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

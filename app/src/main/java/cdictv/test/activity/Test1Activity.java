@@ -152,13 +152,19 @@ public class Test1Activity extends AppCompatActivity {
         }
         mTextView = findViewById(R.id.cq);
         mTextView2 = findViewById(R.id.jilu);
+        mTextView3 = findViewById(R.id.qcfz);
         mTextView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Test1Activity.this, LishiActivity.class));
             }
         });
-
+        mTextView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Test1Activity.this, TimerActivity.class));
+            }
+        });
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

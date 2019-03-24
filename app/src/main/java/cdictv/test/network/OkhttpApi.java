@@ -1,8 +1,12 @@
 package cdictv.test.network;
 
+
+
 import okhttp3.FormBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+
+
 
 public class OkhttpApi {
     private static  final String path1="lamplist";
@@ -18,6 +22,7 @@ public class OkhttpApi {
                 .post(body)
                 .build();
         NetworkApi.getNetworkApi().request(request,myCall);
+
     }
     public static  void show(String parameters, String headers, MyCall myCall) {
         RequestBody body = new FormBody.Builder()
@@ -50,6 +55,7 @@ public class OkhttpApi {
     }
 
     public static  void luKuang( MyCall myCall) {
+
         RequestBody body = new FormBody.Builder()
                 .build();
         Request request = new Request.Builder()
@@ -57,5 +63,6 @@ public class OkhttpApi {
                 .post(body)
                 .build();
         NetworkApi.getNetworkApi().request(request,myCall);
+
     }
 }

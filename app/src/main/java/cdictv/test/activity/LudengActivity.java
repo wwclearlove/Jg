@@ -20,9 +20,9 @@ import cdictv.test.R;
 import cdictv.test.adatpter.LudengAdatper;
 import cdictv.test.bean.LudengBeen;
 import cdictv.test.bean.SpinerBean;
-import cdictv.test.network.OkhttpApi;
 import cdictv.test.network.MyCall;
 import cdictv.test.network.NetworkApi;
+import cdictv.test.network.OkhttpApi;
 import cdictv.test.util.ListPaixu;
 
 public class LudengActivity extends AppCompatActivity {
@@ -63,6 +63,7 @@ public class LudengActivity extends AppCompatActivity {
 
                     }
                 });
+
             });
         }
     }

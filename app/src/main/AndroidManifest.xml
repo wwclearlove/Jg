@@ -58,6 +58,8 @@
             android:label="@string/title_activity_lukuang"
             android:theme="@style/AppTheme">
         </activity>
+        <activity android:name=".activity.FazhiActivity">
+        </activity>
     </application>
 
 </manifest>

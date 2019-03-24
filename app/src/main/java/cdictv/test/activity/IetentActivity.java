@@ -54,7 +54,7 @@ public class IetentActivity extends AppCompatActivity implements View.OnClickLis
             //自动登录
             if(Sputil.getBoolean("zhidong",false)){
                 checkZd.setChecked(true);
-                Toast.makeText(IetentActivity.this,"自动登录",Toast.LENGTH_LONG).show();
+//                Toast.makeText(IetentActivity.this,"自动登录",Toast.LENGTH_LONG).show();
                 startActivity(new Intent(IetentActivity.this,MainActivity.class));
 //                Sputil.putString("name",mUserBean.data.username);
             }else {checkZd.setChecked(false);
