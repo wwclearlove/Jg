@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout toolBar;
     private ImageView leftMenu;
     private TextView title;
+    private TextView zuxiao;
     private LinearLayout navigationView;
     private ImageView topBac;
     private LinearLayout myAccount;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout rglManger;
     private LinearLayout dataAnalysis;
     private LinearLayout gongjiaoche;
+    private LinearLayout lukuang;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,10 +73,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,ViewPagerActivity.class));
             }
         });
+        //公交车
         gongjiaoche.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,PaixuActivity.class));
+            }
+        });
+        //路况
+        lukuang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,LukuangActivity.class));
+            }
+        });
+        //注销
+        zuxiao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -84,12 +101,15 @@ public class MainActivity extends AppCompatActivity {
         toolBar =  findViewById(R.id.tool_bar);
         leftMenu = (ImageView) findViewById(R.id.left_menu);
         title = (TextView) findViewById(R.id.title);
+
         navigationView = (LinearLayout) findViewById(R.id.navigation_view);
         topBac = (ImageView) findViewById(R.id.top_bac);
         myAccount = (LinearLayout) findViewById(R.id.my_account);
         rglManger = (LinearLayout) findViewById(R.id.rgl_manger);
         dataAnalysis = (LinearLayout) findViewById(R.id.dataAnalysis);
         gongjiaoche= (LinearLayout) findViewById(R.id.gongjiao);
+       lukuang= (LinearLayout) findViewById(R.id.lukuang);
+        zuxiao=findViewById(R.id.zhuxiao);
         myFzzhi=findViewById(R.id.my_fz);
 
     }

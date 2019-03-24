@@ -32,8 +32,8 @@ import cdictv.test.adatpter.MyAdapter;
 import cdictv.test.bean.ClczBeen;
 import cdictv.test.database.ClczDao;
 import cdictv.test.database.CzliDao;
-import cdictv.test.network.OkhttpApi;
 import cdictv.test.network.MyCall;
+import cdictv.test.network.OkhttpApi;
 import cdictv.test.network.Upadate;
 import cdictv.test.util.DateUtil;
 import cdictv.test.util.JsonObjecj;
@@ -42,6 +42,7 @@ import cdictv.test.util.Sputil;
 public class Test1Activity extends AppCompatActivity {
     private List<ClczBeen> mClczBeens = new ArrayList<>();
     RecyclerView mRecyclerView;
+    private  String name;
     @SuppressLint("HandlerLeak")
     Handler mHandler = new Handler(){
         @Override
@@ -140,12 +141,9 @@ public class Test1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test1);
-        //第一次进入 设置阀值为50
-        boolean b= Sputil.getBoolean("isFa",false);
-        if(!b){
-            Sputil.putString("warning","50");
-            Sputil.putBoolean("isFa",true);
-        }
+        name=Sputil.getString("name");
+        Log.d("name", "onCreate: "+name);
+
 //        LitePal.getDatabase();
         try {
 
@@ -204,7 +202,10 @@ public class Test1Activity extends AppCompatActivity {
                                 been.setYe(cq+ye);
                                 ClczDao.insertnet(been);
                                 //保存历史记录
-                                CzliDao.insert(mList.get(i).getBh(), editText.getText().toString(), cq + ye + "", "王", DateUtil.show());
+                                Log.d("name1", "onCreate: "+name);
+                                CzliDao.insert(mList.get(i).getBh(), editText.getText().toString(),
+                                        cq + ye + "",name, DateUtil.show());
+
                                 Toast.makeText(Test1Activity.this, "充值成功", Toast.LENGTH_LONG).show();
                                 mList.get(i).setYe(cq + ye);
                                 if (mUpadate != null) {
@@ -231,12 +232,14 @@ public class Test1Activity extends AppCompatActivity {
             OkhttpApi.cheliang(new MyCall() {
                 @Override
                 public void success(String json) {
-                    List list = JsonObjecj.getList(json);
+                    List<ClczBeen> list = JsonObjecj.getList(json);
                     mClczBeens.addAll(list);
                     //保存到数据库
+
+                    Toast.makeText(getApplicationContext(),"没数据",Toast.LENGTH_LONG).show();
                     ClczDao.savall(mClczBeens);
                     myAdapter.notifyDataSetChanged();
-                    Toast.makeText(getApplicationContext(),"没数据",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"保存成功",Toast.LENGTH_LONG).show();
                 }
 
                 @Override

@@ -24,19 +24,6 @@ public class CzliDao {
             return null;
         }
     }
-    public static void insert1(Dao dao,int bh,String je,String ye,String name,String date){
-        CzliBeen been=new CzliBeen();
-        been.setBh(bh);
-        been.setJe(je);
-        been.setYe(ye);
-        been.setName(name);
-        been.setDate(date);
-        try {
-           dao.create(been);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
     public static void insert(int bh,String je,String ye,String name,String date){
         CzliBeen been=new CzliBeen();
         been.setBh(bh);

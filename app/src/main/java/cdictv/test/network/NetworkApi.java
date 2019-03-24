@@ -22,6 +22,7 @@ public class NetworkApi{
     public static final String BASE_USL = "https://easy-mock.com/mock/" +
             "5c8f3515c42b1c0235654282/jiaotong/";
     public static final String uri="https://getman.cn/mock/cheliang";
+    public static final String LUKUANGuri="https://www.easy-mock.com/mock/5c949f1bf1327e51cff2c041/example/test";
      private static  NetworkApi networkApi;
     private  OkHttpClient okHttpClient;
     public   static Gson gson;

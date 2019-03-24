@@ -99,7 +99,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                             been.setBh(mList.get(i).getBh());
                             been.setYe(cq+ye);
                             ClczDao.insertnet(been);
-                            CzliDao.insert(mList.get(i).getBh(),editText.getText().toString(),cq+ye+"","王", DateUtil.show());
+                            CzliDao.insert(mList.get(i).getBh(),editText.getText().toString(),cq+ye+"",Sputil.getString("name"), DateUtil.show());
                             Toast.makeText(mContext,"充值成功",Toast.LENGTH_LONG).show();
                             mList.get(i).setYe(cq+ye);
                             if(mUpadate!=null){

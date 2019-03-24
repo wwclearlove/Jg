@@ -22,7 +22,6 @@ public class PaixuActivity extends AppCompatActivity {
     GongjiaoBean mGongjiaoBean;
     BusQueryAdapter busQueryAdapter;
     List<GongjiaoBean.DataBean> mlist=new ArrayList<>();
-    private int i = 0;
     private int TIME = 3000;
     Handler mHandler=new Handler();
     Runnable mRunnable=new Runnable() {

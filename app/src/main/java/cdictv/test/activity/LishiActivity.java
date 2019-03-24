@@ -33,13 +33,12 @@ public class LishiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lishi);
        List<CzliBeen> list= CzliDao.paixu("");
        getView();
-
        mCzliBeens.addAll(list);
-        /*for (CzliBeen been:mCzliBeens
-             ) {
-            Log.d("been", "onCreate: "+been.toString());
+        for (CzliBeen been:list
+                ) {
+            Log.d("been22", "onCreate: "+been.toString());
 
-        }*/
+        }
         if(mCzliBeens.size()==0){
             TextView textView=findViewById(R.id.te_gone);
             textView.setVisibility(View.VISIBLE);
